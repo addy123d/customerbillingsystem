@@ -9,17 +9,27 @@
 #include<string.h>
 
 int main(){
+    char name[20];
     int userOption,totalAmount = 0;
     char userChoice = 'y';
     printf("Restaurant Billing System\n");
     printf("\n");
     //Print Food Item Menu
     printMenu();
-    puts("------------------------------------------------------------------------------");
+    printf("------------------------------------------------------------------------------\n");
+
+    //Customer Name
+    printf("Enter Name: ");
+    scanf("%[^\n]s",name);
+
+    printf("Welcome, %s",name);
+
+    printf("\n");
 
     //Calculate Total amount
     while(userChoice == 'y'){
         //Give User to choose food item
+        printf("\n");
         printf("Food Code: ");
         scanf("%d",&userOption);
 
@@ -32,9 +42,14 @@ int main(){
         scanf("%s",&userChoice);
     }
 
-    puts("------------------------------------------------------------------------------");
+    printf("------------------------------------------------------------------------------\n");
     printf("\tAMOUNT TO BE PAID (in rupees): ");
     printf("%d\n",totalAmount);
+
+    printf("\n");
+    printf("Thankyou, %s",name);
+
+    printf("\n");
 
     return 0;
 }
